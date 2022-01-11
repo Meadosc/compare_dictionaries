@@ -1,5 +1,9 @@
 # Compare_Dictionaries
-Compare_Dictionaries compares two dictionaries with nested dictionaries to see if they have unique schemas and/or if one is a subset of the other. Granted, that last sentence is gibberish unless you're using my very special definitions of "schema" and "subset". These are defined below, but first note that Compare_dictionaries will by default process an entire dataset in an s3 Bucket, find every unique schema, and save the schema, filename, and count of schemas in the comp_dict/schema/ directory. Schemas that are subsets of another schema are counted under the previously found schema.
+Compare_Dictionaries compares two dictionaries with nested dictionaries to see if they have unique schemas and/or if one is a subset of the other. 
+
+Granted, that last sentence is gibberish unless you're using my very special definitions of "schema" and "subset". 
+
+These are defined below, but first note that Compare_dictionaries will by default process an entire dataset in an s3 Bucket, find every unique schema, and save the schema, filename, and count of schemas in the comp_dict/schema/ directory. Schemas that are subsets of another schema are counted under the previously found schema.
 
 ### Schema
 Here "schema" is defined as the key structure of a dictonary. A simple dictionary may have three keys ('name', 'number', 'weight') which create its schema. All dictionaries with the same three keys and nothing else are considered to have the same schema. The actual values of the dictionary don't matter to it's schema, only the key names.
