@@ -75,7 +75,7 @@ def train_6():
 
 @pytest.fixture
 def train_7():
-	train_6 = {
+	train_7 = {
 		'occupancy': {
 			'car_1': 25, 
 			'car_2': {'left_side':10,'right_side':10},
@@ -83,7 +83,31 @@ def train_7():
 		},
 		'average_speed': 100
 	}
-	return train_6
+	return train_7
+
+
+@pytest.fixture
+def train_8():
+	train_8 = {
+		'occupancy': {
+			'car_1': {'left_side':10,'right_side':10},
+			'caboose': {'left_side': 11,'right_side': 10},
+		},
+		'average_speed': 100
+	}
+	return train_8
+
+
+@pytest.fixture
+def train_9():
+	train_9 = {
+		'occupancy': {
+			'car_1': {'left_side':10},
+			'caboose': {'left_side': 11,'right_side': 10, 'back': 5},
+		},
+		'average_speed': 100
+	}
+	return train_9
 
 
 def test_comp_dict_equal_simple(train_1, train_2):
@@ -117,6 +141,7 @@ def test_is_subset_false_complex(train_6, train_7):
 def test_which_param_subset_simple_first(train_1, train_3):
 	assert which_param_subset(train_1, train_3) == 1
 
+
 def test_which_param_subset_simple_second(train_1, train_3):
 	assert which_param_subset(train_3, train_1) == 2
 
@@ -124,6 +149,11 @@ def test_which_param_subset_simple_second(train_1, train_3):
 def test_which_param_subset_complex_first(train_4, train_7):
 	assert which_param_subset(train_4, train_7) == 1
 
+
 def test_which_param_subset_complex_second(train_4, train_6):
 	assert which_param_subset(train_4, train_6) == 2
+
+
+def test_is_subset_complication(train_8, train_9):
+	assert is_subset(train_8, train_9) and is_subset(train_9, train_8)
 
