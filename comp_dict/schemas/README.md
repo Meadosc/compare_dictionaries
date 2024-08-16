@@ -1,1 +1,1 @@
-a place to store found dictionary schemas
+A place to store dictionary schemas found during processing.
