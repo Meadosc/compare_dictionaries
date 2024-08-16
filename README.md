@@ -1,9 +1,9 @@
 # Compare_Dictionaries
-Compare_Dictionaries compares two dictionaries with nested dictionaries to see if they have unique schemas and/or if one is a subset of the other. 
+Compare_Dictionaries compares two nested dictionaries to see if they have unique schemas and/or if one is a subset of the other. 
 
 Granted, that last sentence is gibberish unless you're using my very special definitions of "schema" and "subset". 
 
-These are defined below, but first note that Compare_dictionaries will by default process an entire dataset in an s3 Bucket, find every unique schema, and save the schema, filename, and count of schemas in the comp_dict/schema/ directory. Schemas that are subsets of another schema are counted under the previously found schema.
+These are defined below, but first note that Compare_Dictionaries will by default process an entire dataset in an s3 Bucket, find every unique schema, and save the schema, filename, and count of schemas in the comp_dict/schema/ directory. Schemas that are subsets of another schema are counted under the previously found schema.
 
 ### Schema
 Here "schema" is defined as the key structure of a dictonary. A simple dictionary may have three keys ('name', 'number', 'weight') which create its schema. All dictionaries with the same three keys and nothing else are considered to have the same schema. The actual values of the dictionary don't matter to it's schema, only the key names.
@@ -38,7 +38,7 @@ dog = {
     }
 ```
 
-You may ask "But this is so simple, why would I need an entire tool set to figure this out? Just take dict.keys() and use Python's built in set logic." And to that I would respond: "rude". But also, Compare_Dictionaries is specifically designed to handle dictionaries with nested dictionaries inside. Consider:
+You may ask "But this is so simple, why would I need an entire tool set to figure this out? Just take dict.keys() and use Python's built in set logic." And to that I would respond: "rude". Also, Compare_Dictionaries is specifically designed to handle nested dictionaries. Consider:
 
 ```
 train = {
@@ -52,7 +52,7 @@ minivan = {
 }
 ```
 
-They have the same top level keys, but are clearly diffent structures! The solution is of course to compare the keys of the nested dictionaries. But how deep do they go? And how many times are you willing to do this manually before it becomes tedious and you want to automate the process?
+They have the same top level keys, but are clearly different structures! The solution is of course to compare the keys of the nested dictionaries. But how deep do they go? And how many times are you willing to do this manually before it becomes tedious and you want to automate the process?
 
 Congratulations, you've just walked through my thought process while exploring a large database with inconsistent data.
 
@@ -103,7 +103,9 @@ train_9 = {
     'average_speed': 100
 }
 ```
-Here train_8 contains a dictionary that is a subset of train_9, but train_9 contains a dicitonary that is a subset of train_8! This is where the definition of a dictionary subset breaks down, and Compare_Dictionaries will consider either of these dictionaries as subsets of another. For the purposes of parsing similar data structures out of a large dataset, this is ideal, however other uses may desire different behavior.
+Here train_8 contains a dictionary that is a subset of train_9, but train_9 contains a dicitonary that is a subset of train_8! This is where the definition of a dictionary subset becomes ambiguous.
+
+Compare_Dictionaries will consider either of these dictionaries as subsets of the other. For the purposes of parsing similar data structures out of a large dataset, this is ideal, however other use cases may lead to different desired behavior.
 
 
 ## Requirements
