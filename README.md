@@ -103,13 +103,7 @@ train_9 = {
     'average_speed': 100
 }
 ```
-<<<<<<< HEAD
-Here train_8 contains a dictionary that is a subset of train_9, but train_9 contains a dicitonary that is a subset of train_8! This is where the definition of a dictionary subset becomes ambiguous.
-
-Compare_Dictionaries will consider either of these dictionaries as subsets of the other. For the purposes of parsing similar data structures out of a large dataset, this is ideal, however other use cases may lead to different desired behavior.
-=======
 Here train_8 contains a dictionary that is a subset of train_9, but train_9 contains a dictionary that is a subset of train_8! This is where the definition of a dictionary subset breaks down, and Compare_Dictionaries will consider either of these dictionaries as subsets of another. For the purposes of parsing similar data structures out of a large dataset, this is ideal, however other uses may desire different behavior.
->>>>>>> 192cd49 (fixing typo)
 
 
 ## Requirements
