@@ -112,9 +112,12 @@ Here train_8 contains a dictionary that is a subset of train_9, but train_9 cont
 * Poetry replaces older dependency management systems like requirements.txt, and it helps package your application
 * Documentation is available at the website [here](https://python-poetry.org/)
 
+
 Python Packages:
 * boto3
 * pyyaml
+
+Tested on Python 3.12.7 with Pytest 8.3.3
 
 ## Instructions
 
