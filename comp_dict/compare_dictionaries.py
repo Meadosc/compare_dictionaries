@@ -1,5 +1,6 @@
-""" Functions to manage comparison logic """
-
+""" 
+Functions to manage comparison logic 
+"""
 
 
 def comp_dict(d1, d2):
@@ -18,16 +19,16 @@ def comp_dict(d1, d2):
 
 
 def is_subset(d1, d2):
-	k1 = d1.keys()
+	k1 = d1.keys() # dict.keys() returns a 'dict_keys' object that follows set logic
 	k2 = d2.keys()
 
-	if k1 <= k2 or k2 <= k1: # it's a subset
-		subset = True
+	if k1 <= k2 or k2 <= k1: # Current comparison is a subset
+		issubset = True
 		union = k1 & k2
 		for k in union:
 			if isinstance(d1[k], dict) and isinstance(d2[k], dict):
-				subset = subset and is_subset(d1[k], d2[k])
-		return subset
+				issubset = issubset and is_subset(d1[k], d2[k]) # check if nested are subsets
+		return issubset
 	else: # it's not a subset
 		return False	
 	
