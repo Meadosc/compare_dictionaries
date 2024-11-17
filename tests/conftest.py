@@ -108,3 +108,68 @@ def train_9():
 		'average_speed': 100
 	}
 	return train_9
+
+
+@pytest.fixture
+def train_list():
+	train_list = [
+		{
+		'occupancy': {'car_1': 25, 'car_2': 30},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {'car_1': 25, 'car_2': 35},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {'car_1': 25, 'car_2':30, 'caboose':25},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {
+			'car_1': 25, 
+			'car_2': 30, 
+			'caboose': {'left_side': 10,'right_side': 15},
+			},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {
+			'car_1': 25, 
+			'car_2': 35, 
+			'caboose': {'left_side': 10,'right_side': 15},
+			},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {
+			'car_1': 25, 
+			'caboose': {'left_side': 11,'right_side': 10, 'middle': 5},
+			},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {
+			'car_1': 25, 
+			'car_2': {'left_side':10,'right_side':10},
+			'caboose': {'left_side': 11,'right_side': 10, 'back': 5},
+			},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {
+			'car_1': {'left_side':10,'right_side':10},
+			'caboose': {'left_side': 11,'right_side': 10},
+			},
+		'average_speed': 100
+		},
+		{
+		'occupancy': {
+			'car_1': {'left_side':10},
+			'caboose': {'left_side': 11,'right_side': 10, 'back': 5},
+			},
+		'average_speed': 100
+		},
+	]
+	return train_list
+
