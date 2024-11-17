@@ -7,7 +7,7 @@ import yaml
 
 class Constants:
 	def __init__(self):
-		with open('constants.yaml', 'r') as f:
+		with open('comp_dict/constants.yaml', 'r') as f:
 			constants = yaml.safe_load(f)
 		self.constants = constants
 		self.prefix = constants['prefix']

@@ -122,13 +122,13 @@ Tested on Python 3.12.7 with Pytest 8.3.3
 ## Instructions
 
 1. Edit constants.yaml to point to your s3 bucket. You'll need to supply the AWS key to access it as well, but the 'prefix' value is optional.
-2. Either run poetry shell or set up the envoronment in your preferred way
+2. Either run poetry shell or set up the environment in your preferred way
 ```
 poetry shell
 ```
-3. From compare_dictionaries/comp_dict/ run main.py. And yes, that should be better, but this is v0.01
+3. From compare_dictionaries/ run main.py.
 ```
-python main.py
+python comp_dict/main.py
 ```
 
 ## Testing
