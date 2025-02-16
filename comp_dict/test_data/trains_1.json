@@ -1,0 +1,46 @@
+[
+    {
+        "occupancy": {
+            "car_1": 25,
+            "car_2": 30
+        },
+        "average_speed": 100
+    },
+    {
+        "occupancy": {
+            "car_1": 25,
+            "car_2": 35
+        },
+        "average_speed": 100
+    },
+    {
+        "occupancy": {
+            "car_1": 25,
+            "car_2": 30,
+            "caboose": 25
+        },
+        "average_speed": 100
+    },
+    {
+        "occupancy": {
+            "car_1": 25,
+            "car_2": 30,
+            "caboose": {
+                "left_side": 10,
+                "right_side": 15
+            }
+        },
+        "average_speed": 100
+    },
+    {
+        "occupancy": {
+            "car_1": 25,
+            "car_2": 35,
+            "caboose": {
+                "left_side": 10,
+                "right_side": 15
+            }
+        },
+        "average_speed": 100
+    }
+]
