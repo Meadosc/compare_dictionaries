@@ -2,7 +2,7 @@
     {
         "occupancy": {
             "car_1": 25,
-            "car_2": 30
+            "caboose": 20
         },
         "average_speed": 100
     }

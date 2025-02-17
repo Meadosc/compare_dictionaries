@@ -1,0 +1,15 @@
+[
+    {
+        "occupancy": {
+            "car_1": {
+                "left_side":10,
+                "right_side":10
+            },
+            "caboose": {
+                "left_side": 11,
+                "right_side": 10
+            }
+        },
+        "average_speed": 100
+    }
+]
