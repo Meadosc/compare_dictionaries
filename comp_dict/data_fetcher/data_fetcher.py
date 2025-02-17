@@ -1,5 +1,8 @@
 """
-
+Data Fetcher module is responsible for fetching data from various sources.
+It provides two classes: DataFetcher and FetcherFactory. DataFetcher is an abstract class
+that defines the interface for fetching data. FetcherFactory is a factory class that creates
+the appropriate fetcher based on the input type.
 """
 
 from abc import ABC, abstractmethod
